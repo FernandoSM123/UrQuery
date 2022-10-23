@@ -1,4 +1,4 @@
-
+package com.UrQuery.web;
 
 import java.io.File;
 
@@ -56,6 +56,12 @@ public class EmbeddedServer {
         // root.addPreResources(new DirResourceSet(root, "/WEB-INF/data",
         //                                         additionWebData.getAbsolutePath(), "/"));
         // ctx.setResources(root);
+
+        // Map WEB-INF/document 
+        var additionWebDocument = new File("./resources/document");
+        root.addPreResources(new DirResourceSet(root, "/WEB-INF/document",
+                                                additionWebData.getAbsolutePath(), "/"));
+        ctx.setResources(root);
         
         // Map WEB-INF/props 
         var additionWebProps = new File("./resources/props");
