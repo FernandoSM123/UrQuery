@@ -1,0 +1,13 @@
+{
+    "Grupo": 2,
+    "Integrantes": [
+    {"ID":305060323,"Nombre":"Fernando","Apellidos":"Sanchez Monge"},
+    {"ID":604420399,"Nombre":"Giancarlo","Apellidos":"Chaves Matarrita"},
+    {"ID":305310366,"Nombre":"Gloriana","Apellidos":"Sojo Pereira"}
+    ],
+    "Curso": {"Nombre":"EIF400 Paradigmas de Programacion","NRC":50752},
+    "Universidad": "Universidad Nacional de Costa Rica(UNA)",
+    "Escuela:": "Escuela de informatica",
+    "Ciclo": "II",
+    "Año":2022
+  }
