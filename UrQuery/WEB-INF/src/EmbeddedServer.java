@@ -15,7 +15,7 @@ public class EmbeddedServer {
         
         String webappsDirLocation = "";
         String CONFIG_PROPS = "/WEB-INF/props";
-        int port = 8000;
+        int port = 8080;
 
         try {
             if (args.length > 0){
@@ -29,7 +29,7 @@ public class EmbeddedServer {
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(Integer.valueOf(port));
 
-        StandardContext ctx = (StandardContext) tomcat.addWebApp("",
+        StandardContext ctx = (StandardContext) tomcat.addWebapp("",
                                                                 new File(webappsDirLocation).getAbsolutePath());
         WebResourceRoot root = new StandardRoot(ctx);
 
@@ -60,7 +60,7 @@ public class EmbeddedServer {
         // Map WEB-INF/document 
         var additionWebDocument = new File("./resources/document");
         root.addPreResources(new DirResourceSet(root, "/WEB-INF/document",
-                                                additionWebData.getAbsolutePath(), "/"));
+                                                additionWebDocument.getAbsolutePath(), "/"));
         ctx.setResources(root);
         
         // Map WEB-INF/props 
