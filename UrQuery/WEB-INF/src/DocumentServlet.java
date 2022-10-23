@@ -17,7 +17,7 @@ public class DocumentServlet extends HttpServlet {
     String id = req.getParameter("id");
     res.setContentType("text/html");
     res.setCharacterEncoding("UTF-8");
-    String filename = "/WEB-INF/resources/"+id;
+    String filename = "/WEB-INF/resources/document/"+id;
     ServletContext context = getServletContext();
     String text = "";
     InputStream inp = context.getResourceAsStream(filename);
