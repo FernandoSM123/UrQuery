@@ -1,0 +1,51 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletContext;
+
+
+@WebServlet(
+        name = "AboutServlet",
+        urlPatterns = {"/about"}
+    )
+
+public class AboutServlet extends HttpServlet {
+    public void doGet(HttpServletRequest req, HttpServletResponse res)
+            throws IOException {
+
+    //Leer archivo
+    String filename = "/WEB-INF/resources/about.json";
+    ServletContext context = getServletContext();
+    String text = "";
+    InputStream inp = context.getResourceAsStream(filename);
+    PrintWriter writer = res.getWriter();
+
+    if (inp != null) {
+    InputStreamReader isr = new InputStreamReader(inp);
+    BufferedReader reader = new BufferedReader(isr);
+    String line = "";
+  
+    while ((line = reader.readLine()) != null) {
+    text += line;
+    }
+
+     // Construir respuesta
+     res.setContentType("application/json");
+     res.setCharacterEncoding("UTF-8");
+     writer.print(text);
+     writer.flush();
+    }
+    }
+}
