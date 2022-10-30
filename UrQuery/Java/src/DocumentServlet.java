@@ -34,16 +34,12 @@ public class DocumentServlet extends HttpServlet {
     if (inp != null) {
     InputStreamReader isr = new InputStreamReader(inp);
     BufferedReader reader = new BufferedReader(isr);
-    String line = "";
-  
-    while ((line = reader.readLine()) != null) {
-    text += line;
-    }
+    String lines = reader.lines().collect(Collectors.joining("\n"));
 
      // Construir respuesta
      res.setContentType("text/html");
      res.setCharacterEncoding("UTF-8");
-     writer.print(text);
+     writer.print(lines);
      writer.flush();
     }
     }

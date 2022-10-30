@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletContext;
 
+import java.util.stream.*;
+
+import java.util.Optional;
+
 
 @WebServlet(
         name = "AboutServlet",
@@ -29,23 +33,26 @@ public class AboutServlet extends HttpServlet {
     String filename = "/WEB-INF/resources/about.json";
     ServletContext context = getServletContext();
     String text = "";
-    InputStream inp = context.getResourceAsStream(filename);
+    InputStream inp = context.getResourceAsStream(filename); //optional
     PrintWriter writer = res.getWriter();
 
     if (inp != null) {
     InputStreamReader isr = new InputStreamReader(inp);
     BufferedReader reader = new BufferedReader(isr);
-    String line = "";
+    String lines = reader.lines().collect(Collectors.joining("\n"));
   
-    while ((line = reader.readLine()) != null) {
-    text += line;
-    }
 
      // Construir respuesta
      res.setContentType("application/json");
      res.setCharacterEncoding("UTF-8");
-     writer.print(text);
+     writer.print(lines);
      writer.flush();
     }
+
     }
 }
+
+/*
+1- BufferedReader + Stream
+https://mkyong.com/java8/java-8-stream-read-a-file-line-by-line/
+*/

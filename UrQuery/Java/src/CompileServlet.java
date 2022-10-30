@@ -13,9 +13,10 @@ import java.net.URL;
 
 import java.sql.Timestamp;
 
-import java.net.http.*;
-import java.net.http.HttpResponse.*;
-import java.net.http.HttpRequest.*;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 @WebServlet(
     name = "CompileServlet",
@@ -23,8 +24,25 @@ import java.net.http.HttpRequest.*;
     )
 
 public class CompileServlet extends HttpServlet {
+
+     //Hacer request al servidor de prolog
+    public void prologRequest(String url) throws Exception,InterruptedException  {
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+        .uri(URI.create(url))
+        .build();
+
+        HttpResponse<String> response = client.send(request,
+            HttpResponse.BodyHandlers.ofString());
+
+        System.out.println();
+        System.out.println("*** Respuesta de prolog server ***");
+        System.out.println(response.body());
+    }
+
     public void doPost(HttpServletRequest req, HttpServletResponse res)
-    throws IOException {
+    throws IOException{
 
         String EA = req.getParameter("EA");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -33,24 +51,15 @@ public class CompileServlet extends HttpServlet {
         PrintWriter writer = res.getWriter();
 
         //Prolog request
-        
-        // var PORT = 8002;
-        // var API = "/test";
-        // var SERVICE = String.format("http://localhost:%d%s", PORT, API); 
-    
-        // var client = HttpClient.newHttpClient();
-        // var uri = URI.create(SERVICE);
-
-        // var request = HttpRequest.newBuilder(uri)
-        // .version(HttpClient.Version.HTTP_1_1)
-        // .header("Content-Type", "text/plain")
-        // .header("accept", "text/plain")
-        // //.POST(BodyPublishers.ofString(body))
-        // .build();
-
-        // var response = client.send(request, BodyHandlers.ofString());
-        // System.out.println("*** Response ***");
-        // System.out.println(response.body());
+        try{
+            prologRequest("http://localhost:8082/");
+        }
+        catch(InterruptedException e){
+            System.out.println(e);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
 
         // Construir respuesta
         res.setContentType("text/html");
@@ -60,3 +69,8 @@ public class CompileServlet extends HttpServlet {
 
     }
 }
+
+/*
+1-HACER PETICION HTTP JAVA
+https://zetcode.com/java/getpostrequest/
+*/

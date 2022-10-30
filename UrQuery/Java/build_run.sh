@@ -4,6 +4,6 @@ export CLASSPATH=.:classes:lib/annotations-api.jar:lib/ecj-4.6.3.jar:lib/tomcat-
 
 javac -cp $CLASSPATH -d classes src/*.java
 
-export PORT=8001
+export PORT=8081
  
 java -cp $CLASSPATH Main $PORT

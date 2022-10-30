@@ -129,4 +129,5 @@ function listTestFiles(files){
 
 //Asociar eventos
 window.onload = getTestFiles;
+document.getElementById("compileBtn").addEventListener("click", compile);
 document.getElementById("aboutBtn").addEventListener("click", showAbout);

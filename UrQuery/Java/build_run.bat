@@ -10,7 +10,7 @@ set CLASSPATH=.;classes;lib\annotations-api.jar;lib\ecj-4.6.3.jar;lib\tomcat-dbc
 
 @echo off
 javac -cp %CLASSPATH% -d classes src\*.java
-set PORT = 8001
+set PORT = 8081
 
 @echo on
 java -cp %CLASSPATH% Main %PORT%

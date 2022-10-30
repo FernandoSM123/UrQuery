@@ -13,7 +13,7 @@ public class Main{
    public static void main(String[] args) throws Exception {
 
        String webappsDirLocation = "";
-       int port = 8001;
+       int port = 8081;
 
        try{
         if (args.length > 0 ){
