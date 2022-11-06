@@ -37,20 +37,31 @@
 			<button class="btn btn-secondary btn-lg" id="runBtn">Run</button>
 		</div>
 
-		<!-- DROPDOWN -->
-		<div class="btn-group">
-			<button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown"
-				aria-expanded="false">
-				Examples
-			</button>
-			<ul class="dropdown-menu" id="filesList">
-			</ul>
+		<div>
+			<!-- DROPDOWN SCRIPTS -->
+			<div class="btn-group" id="dropDownScripts">
+				<button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-bs-toggle="dropdown"
+					aria-expanded="false">
+					Scripts
+				</button>
+				<ul class="dropdown-menu" id="scriptsList">
+				</ul>
+			</div>
+			<!-- DROPDOWN XML FILES -->
+			<div class="btn-group" id="dropDownFiles">
+				<button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown"
+					aria-expanded="false">
+					Files
+				</button>
+				<ul class="dropdown-menu" id="filesList">
+				</ul>
+			</div>
 		</div>
 	</nav>
 
 	<!--STATUS--->
 	<div class="statusWrapper">
-		<p class="status">Status: 
+		<p class="status">Status:
 			<b id="statusOk">OK</b>
 			<b id="statusError">Error</b>
 		</p>
@@ -61,27 +72,35 @@
 
 		<!--EDITION AREA--->
 		<div class="editionArea container border border-secondary rounded">
-			<h6>Edition Area</h6>
+			<h6>Edition Area (EA)</h6>
 			<div class="boxWrapper">
 				<div class="textWrapper">
 					<textarea id="EA"></textarea>
+				</div>
+				<div class="btnGroup">
+					<button class="btn btn-primary" id="btnCleanEA">Clean</button>
+					<button class="btn btn-secondary">Save</button>
 				</div>
 			</div>
 		</div>
 
 		<!--DOCUMENT AREA--->
 		<div class="documentArea container border border-secondary rounded">
-			<h6>Document Area</h6>
+			<h6>Document Area (DA)</h6>
 			<div class="boxWrapper">
 				<div class="textWrapper">
 					<textarea id="DA"></textarea>
+				</div>
+				<div class="btnGroup">
+					<button class="btn btn-primary" id="btnCleanDA">Clean</button>
+					<button class="btn btn-secondary">Save</button>
 				</div>
 			</div>
 		</div>
 
 		<!--RESULT AREA--->
 		<div class="resultArea container border border-secondary rounded">
-			<h6>Result Area</h6>
+			<h6>Result Area (RA)</h6>
 			<div class="boxWrapper">
 				<div class="textWrapper">
 					<textarea id="RA" readonly></textarea>

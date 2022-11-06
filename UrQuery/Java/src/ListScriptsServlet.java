@@ -17,21 +17,20 @@ import java.util.*;
 
 import com.google.gson.Gson;
 
-@WebServlet(name = "ListFilesServlet", urlPatterns = { "/listFiles" })
+@WebServlet(name = "ListScriptsServlet", urlPatterns = { "/listScripts" })
 
-public class ListFilesServlet extends HttpServlet {
+public class ListScriptsServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res)
             throws IOException {
 
         // Obtener path de los archivos
         ServletContext context = getServletContext();
-        Set<String> files = context.getResourcePaths("/WEB-INF/resources/testFiles");
+        Set<String> files = context.getResourcePaths("/WEB-INF/resources/scripts");
         PrintWriter writer = res.getWriter();
 
         // Obtener nombre de los archivos
         String filesName[] = files.stream()
                 .map(f -> new File(f).getName())
-                .filter(f -> f.toLowerCase().endsWith(".xml"))
                 .toArray(String[]::new);
 
         // Convertir a json
@@ -44,6 +43,3 @@ public class ListFilesServlet extends HttpServlet {
         writer.flush();
     }
 }
-
-// https://docs.oracle.com/javaee/1.3/api/javax/servlet/ServletContext.html#getResourcePaths%28java.lang.String%29
-// https://stackoverflow.com/questions/14526260/how-do-i-get-the-file-name-from-a-string-containing-the-absolute-file-path

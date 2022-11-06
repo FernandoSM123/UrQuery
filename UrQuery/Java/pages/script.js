@@ -7,12 +7,33 @@ const resultArea = document.getElementById("RA");
 const popUpAbout = document.getElementById('popUpAbout');
 const aboutBody = document.getElementById('aboutBody');
 
-const ok = document.getElementById('statusOk');
-const error = document.getElementById('statusError');
+const okLabel = document.getElementById('statusOk');
+const errorLabel = document.getElementById('statusError');
 
 const filesList = document.getElementById('filesList');
+const scriptsList = document.getElementById('scriptsList');
 
-//Traer documento desde el servidor 
+//ERRORES
+const errorMessages = {
+    noScript: "ERROR : Script necesario en el area de EA para compilar",
+    noDocument: "ERROR : Documento necesario en el area de DA para ejecutar script",
+};
+
+// Cambiar status a OK
+function changeStatusOk(){
+    okLabel.style.display = "inline";
+    errorLabel.style.display = "none";
+}
+
+//Cambiar status a error y mostrar error
+function changeStatusError(errorMsg){
+    okLabel.style.display = "none";
+    errorLabel.style.display = "inline";
+    errorLabel.innerHTML = errorMsg;
+}
+
+
+//Traer documento XML desde el servidor 
 function getExampleDocument(filename) {
     console.log(filename);
     const url = '/document?id=' + filename;
@@ -26,22 +47,33 @@ function getExampleDocument(filename) {
         .catch(err => console.log(err));
 }
 
+//Traer script de Urquery desde el servidor
+function getExampleScript(scriptName) {
+    console.log(scriptName);
+    const url = '/script?id=' + scriptName;
+
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            editionArea.value = data;
+        })
+        .catch(err => console.log(err));
+}
+
 //Compilar EA
 function compile() {
-    let text = editionArea.value;
+    let script = editionArea.value;
+    const url = '/compile?EA=' + script;
 
-    //Texto vacio
-    if(text === ""){
-        ok.style.display = "none";
-        error.style.display = "inline";
-        resultArea.value = "";
+    //No script
+    if(script === ""){
+       changeStatusError(errorMessages.noScript);
         return;
     }
 
-
-    ok.style.display = "inline";
-    error.style.display = "none";
-    const url = '/compile?EA=' + text;
+    //Cambiar status a OK
+    changeStatusOk();
 
     fetch(url, {
         method: 'POST',
@@ -56,6 +88,20 @@ function compile() {
             resultArea.value = data;
         })
         .catch(err => console.log(err));
+}
+
+//ejecutar script junto con el documento, y mostrar resultado en RA
+function runDocumentWithScript(){
+    let doc = documentArea.value;
+
+    //No documento
+    if(doc === ""){
+        changeStatusError(errorMessages.noDocument);
+         return;
+     }
+ 
+     //Cambiar status a OK
+     changeStatusOk();
 }
 
 //mostrar contenido de about.json en pantalla
@@ -92,21 +138,36 @@ function fillAbout(data) {
     aboutBody.innerHTML = text;
 }
 
-// Traer archivos de ejemplo desde el servidor
-function getTestFiles() {
+// Traer nombres de los documentos XML desde el servidor
+function getDocuments() {
      const url = '/listFiles';
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            listTestFiles(data);
+            listDocuments(data);
         })
         .catch(err => console.log(err));
 }
 
-//Listar documentos de prueba en la pagina
-function listTestFiles(files){
+// Traer nombres de los scripts de Urquery desde el servidor
+function getScripts() {
+    const url = '/listScripts';
+
+   fetch(url)
+       .then(response => response.json())
+       .then(data => {
+           console.log(data);
+           listScripts(data);
+       })
+       .catch(err => console.log(err));
+}
+
+
+
+//Llenar dropdown con los nombres de los documentos XML
+function listDocuments(files){
     for(const key in files){
 
         const fileName = files[key].split(".")[0];
@@ -127,7 +188,36 @@ function listTestFiles(files){
     }
 }
 
+//Llenar dropdown con los nombres de los scripts de Urquery
+function listScripts(scripts){
+    for(const key in scripts){
+
+        const scriptName = scripts[key].split(".")[0];
+
+        //Crear a tag
+        let a = document.createElement("a");
+        a.classList.add("dropdown-item");
+        a.setAttribute("href","javascript:void(0)");
+        a.innerHTML = scriptName;
+
+        //Crear li tag
+        let li = document.createElement("li");
+        li.addEventListener("click",() => { getExampleScript(scripts[key])});
+        li.appendChild(a);
+
+        //Annadir li
+        scriptsList.appendChild(li);
+    }
+}
+
 //Asociar eventos
-window.onload = getTestFiles;
+window.addEventListener("load",getDocuments);
+window.addEventListener("load",getScripts);
+
 document.getElementById("compileBtn").addEventListener("click", compile);
+document.getElementById("runBtn").addEventListener("click", runDocumentWithScript);
 document.getElementById("aboutBtn").addEventListener("click", showAbout);
+
+//Botones de limpiar
+document.getElementById("btnCleanEA").addEventListener("click", ()=>{editionArea.value = ""});
+document.getElementById("btnCleanDA").addEventListener("click", ()=>{documentArea.value = ""});

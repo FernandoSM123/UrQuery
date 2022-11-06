@@ -18,23 +18,22 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-@WebServlet(
-    name = "CompileServlet",
-    urlPatterns = {"/compile"}
-    )
+//Servlet para compilar script a Urquery a js
+
+@WebServlet(name = "CompileServlet", urlPatterns = { "/compile" })
 
 public class CompileServlet extends HttpServlet {
 
-     //Hacer request al servidor de prolog
-    public void prologRequest(String url) throws Exception,InterruptedException  {
+    // Hacer request al servidor de prolog
+    public void prologRequest(String url) throws Exception, InterruptedException {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-        .uri(URI.create(url))
-        .build();
+                .uri(URI.create(url))
+                .build();
 
         HttpResponse<String> response = client.send(request,
-            HttpResponse.BodyHandlers.ofString());
+                HttpResponse.BodyHandlers.ofString());
 
         System.out.println();
         System.out.println("*** Respuesta de prolog server ***");
@@ -42,22 +41,20 @@ public class CompileServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse res)
-    throws IOException{
+            throws IOException {
 
         String EA = req.getParameter("EA");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        String strTimeStamp=timestamp.toString();
+        String strTimeStamp = timestamp.toString();
         EA = strTimeStamp + "\n" + EA;
         PrintWriter writer = res.getWriter();
 
-        //Prolog request
-        try{
+        // Prolog request
+        try {
             prologRequest("http://localhost:8082/");
-        }
-        catch(InterruptedException e){
+        } catch (InterruptedException e) {
             System.out.println(e);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
 
@@ -71,6 +68,6 @@ public class CompileServlet extends HttpServlet {
 }
 
 /*
-1-HACER PETICION HTTP JAVA
-https://zetcode.com/java/getpostrequest/
-*/
+ * 1-HACER PETICION HTTP JAVA
+ * https://zetcode.com/java/getpostrequest/
+ */
