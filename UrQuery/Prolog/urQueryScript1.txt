@@ -1,0 +1,7 @@
+let uri = '.' in 
+<ul> 
+{ 
+    for $li in doc(uri)/bookstore/book/title 
+    return <li>{$li}</li> 
+} 
+</ul>

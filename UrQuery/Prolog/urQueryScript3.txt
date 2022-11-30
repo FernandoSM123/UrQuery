@@ -1,0 +1,7 @@
+let file = "." in 
+<div> 
+{ 
+    for $a in doc(file)/bookstore/book/price 
+    return <p>{$a}</p> 
+} 
+</div>

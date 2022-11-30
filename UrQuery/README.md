@@ -13,27 +13,18 @@
 
 ### Instrucciones:
 
-1. Como primer paso, copiar el archivo .war, dentro de la carpeta webapps, en el directorio donde se encuentra instalado Apache Tomcat e.g. _C:\Program Files\Apache Software Foundation\Tomcat 10.1\webapps_.
+1. Dirigirse a la carpeta del proyecto y ejecutar el archivo "run.bat", el cual levantara el servidor
+de Java en el puerto **8081**, y el servidor de prolog en el puerto **8082**.
 
-2. Luego ingresar al directorio Apache Tomcat mediante la línea de comando, escribiendo **cmd** en la barra de búsqueda de Windows. Luego, accediendo a la carpeta donde se encuentra instalado Tomcat e.g. _cd C:\Program Files\Apache Software Foundation\Tomcat 10.1\bin_.
-
-3. Dentro del directorio, inicializamos el servidor mediante el comando **startup**.
-
-4. Una vez iniciado, procedemos a abrir el browser e ingresamos la dirección **localhost:8081/urquery/**
-
-5. Luego de esto, deberá aparecer la página del proyecto.
+2. Una vez que se levanten ambos servidores, procedemos a abrir el browser e ingresamos la dirección **localhost:8081**, en la cual se mostrara la ventana principal del proyecto.
 
 ### Como compilar:
 
-Dentro de la área designada como **Edition Area**, se puede escribir el texto deseado a compilar. Luego se procede a dar click en el botón **Run** y el resultado será mostrado en la sección de **Result Area**.
-
-### Como ejecutar:
-
-En la parte superior derecha de la página, se encuentra un botón de tipo **dropdown** donde se puede seleccionar archivos integrados en el proyectos. Al seleccionar una de las opciones, la información del documento será mostrado en la sección **Document Area**.
+Dentro de la área designada como **Edition Area**, se puede escribir el texto deseado a compilar. Luego se procede a dar click en el botón **Compile** y el resultado será mostrado en la sección de **Result Area**.
 
 ### Como limpiar:
 
-Para limpiar la página, basta con refrescar el navegador.
+Usar los botones **Clean** en las respectivas secciones para limpiar el area de texto.
 
 
 

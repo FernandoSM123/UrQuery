@@ -29,6 +29,15 @@ import javax.xml.transform.stream.StreamResult;
 
 import java.util.stream.*;
 
+import java.util.Arrays;
+
+import com.google.gson.*;
+
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+
+//Servlet para subir o traer un archivo xml
+
 @WebServlet(name = "DocumentServlet", urlPatterns = { "/document" })
 
 public class DocumentServlet extends HttpServlet {
@@ -65,35 +74,38 @@ public class DocumentServlet extends HttpServlet {
             System.out.println(e);
         }
     }
+
+
+    //Guardar archivo xml
+    public void doPost(HttpServletRequest req, HttpServletResponse res)
+    throws IOException {
+
+        try {
+            //Sacar valores de la request
+            String body = req.getReader().lines().collect(Collectors.joining());
+            JsonObject json = new Gson().fromJson(body, JsonObject.class);
+            String file = json.get("fileTxt").getAsString();
+            String fileName = json.get("fileName").getAsString();
+
+            ServletContext cxt = getServletContext();
+            String path = cxt.getRealPath("WEB-INF/resources/testFiles/") + fileName + ".xml";
+
+            PrintWriter writer = res.getWriter();
+
+            //Escribir en archivo
+            FileWriter fw = new FileWriter(path,false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(file);
+            bw.close();
+
+             // Construir respuesta
+            res.setContentType("txt/xml");
+            res.setCharacterEncoding("UTF-8");
+            writer.print(fileName);
+            writer.flush();
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
-
-// //Leer archivo
-// String id = req.getParameter("id");
-// String filename = "/WEB-INF/resources/testFiles/"+id;
-// ServletContext context = getServletContext();
-// String text = "";
-
-// InputStream inp = context.getResourceAsStream(filename);
-// PrintWriter writer = res.getWriter();
-
-// if (inp != null) {
-// InputStreamReader isr = new InputStreamReader(inp);
-// BufferedReader reader = new BufferedReader(isr);
-// String lines = reader.lines().collect(Collectors.joining("\n"));
-
-// System.out.println(lines);
-
-// // Construir respuesta
-// res.setContentType("text/xml");
-// res.setCharacterEncoding("UTF-8");
-// writer.print(lines);
-// writer.flush();
-
-/*
- * 1- Leer archivo xml java
- * https://www.javatpoint.com/how-to-read-xml-file-in-java
- * 
- * 2- XML to string
- * http://www.java2s.com/Tutorials/Java/XML/
- * How_to_convert_org_w3c_dom_Document_to_String.htm
- */

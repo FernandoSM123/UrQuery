@@ -48,8 +48,3 @@ public class AboutServlet extends HttpServlet {
 
     }
 }
-
-/*
- * 1- BufferedReader + Stream
- * https://mkyong.com/java8/java-8-stream-read-a-file-line-by-line/
- */

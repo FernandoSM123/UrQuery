@@ -18,56 +18,65 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-//Servlet para compilar script a Urquery a js
+import java.util.HashMap;
+
+import java.util.stream.*;
+
+import com.google.gson.*;
+
+//Servlet para compilar script de Urquery a js
 
 @WebServlet(name = "CompileServlet", urlPatterns = { "/compile" })
 
 public class CompileServlet extends HttpServlet {
 
     // Hacer request al servidor de prolog
-    public void prologRequest(String url) throws Exception, InterruptedException {
+    public HttpResponse<String> prologRequest(String url, String urQueryScript) throws Exception, InterruptedException {
+
+        String requestBody = "{" + '"' + "urQuery" + '"' + ":" + '"' + urQueryScript +'"' + "}";
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
+                .version(HttpClient.Version.HTTP_1_1)
+                .header("Content-Type", "application/json")
+                .header("accept", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .build();
 
-        HttpResponse<String> response = client.send(request,
-                HttpResponse.BodyHandlers.ofString());
-
-        System.out.println();
-        System.out.println("*** Respuesta de prolog server ***");
-        System.out.println(response.body());
+        return client.send(request,HttpResponse.BodyHandlers.ofString());
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse res)
             throws IOException {
 
-        String EA = req.getParameter("EA");
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        String strTimeStamp = timestamp.toString();
-        EA = strTimeStamp + "\n" + EA;
-        PrintWriter writer = res.getWriter();
-
-        // Prolog request
         try {
-            prologRequest("http://localhost:8082/");
+            PrintWriter writer = res.getWriter();
+
+            //Sacar valores de la request
+            String body = req.getReader().lines().collect(Collectors.joining());
+            JsonObject json = new Gson().fromJson(body, JsonObject.class);
+            String script = json.get("script").getAsString();
+            System.out.println(script);
+
+            // Prolog request
+            //HttpResponse<String> result = prologRequest("http://localhost:8082/compile",EA);
+            HttpResponse<String> result = prologRequest("http://localhost:8082/compile",script);
+
+            System.out.println(result.body());
+            System.out.println("*** Prolog response ***");
+            System.out.println(result.body());
+
+            // Construir respuesta
+            res.setContentType("application/json");
+            res.setCharacterEncoding("UTF-8");
+            writer.print(result.body());
+            writer.flush();
+
         } catch (InterruptedException e) {
             System.out.println(e);
         } catch (Exception e) {
             System.out.println(e);
         }
-
-        // Construir respuesta
-        res.setContentType("text/html");
-        res.setCharacterEncoding("UTF-8");
-        writer.print(EA);
-        writer.flush();
-
     }
 }
-
-/*
- * 1-HACER PETICION HTTP JAVA
- * https://zetcode.com/java/getpostrequest/
- */

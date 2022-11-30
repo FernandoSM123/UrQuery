@@ -1,0 +1,7 @@
+let dir = "." in 
+<ul> 
+{ 
+    for $li in doc(dir)/persons/person/name 
+    return <li>{$li}</li> 
+} 
+</ul>

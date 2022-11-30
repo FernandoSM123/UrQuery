@@ -1,0 +1,158 @@
+server(started, 1668491329).
+/*Mon Nov 14 23:48:48 2022*/ request(1, 1668491328.728, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(24),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(1, 0.07895670900000001, 56, 200, ok).
+server(stopped, 1668491356).
+server(started, 1668491379).
+/*Mon Nov 14 23:49:39 2022*/ request(1, 1668491379.314, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(39),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(1, 0.083722327, 85, 500, error("Illegal HTTP parameter: _15780{msg:succeed,result:ttt")).
+/*Mon Nov 14 23:50:21 2022*/ request(2, 1668491421.293, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8082),connection('keep-alive'),sec_ch_ua('" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"Linux"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(2, 0.0062622120000000005, 10, 200, ok).
+/*Mon Nov 14 23:50:22 2022*/ request(3, 1668491422.602, [peer(ip(127,0,0,1)),method(get),request_uri('/favicon.ico'),path('/favicon.ico'),http_version(1-1),host(localhost),port(8082),connection('keep-alive'),sec_ch_ua('" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'),sec_ch_ua_mobile('?0'),user_agent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36'),sec_ch_ua_platform('"Linux"'),sec_fetch_site('same-origin'),sec_fetch_mode('no-cors'),sec_fetch_dest(image),referer('http://localhost:8082/')]).
+completed(3, 0.002089713000000007, 89, 404, error(404,'/favicon.ico')).
+/*Mon Nov 14 23:50:36 2022*/ request(4, 1668491436.390, [peer(ip(127,0,0,1)),method(get),request_uri('/hola'),path('/hola'),http_version(1-1),host(localhost),port(8082),connection('keep-alive'),sec_ch_ua('" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"Linux"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(4, 0.02270225, 360, 404, error(404,'/hola')).
+/*Mon Nov 14 23:50:42 2022*/ request(5, 1668491442.828, [peer(ip(127,0,0,1)),method(get),request_uri('/test'),path('/test'),http_version(1-1),host(localhost),port(8082),connection('keep-alive'),sec_ch_ua('" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"Linux"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(5, 0.002079635999999996, 12, 200, ok).
+/*Mon Nov 14 23:50:55 2022*/ request(6, 1668491455.933, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(18),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(6, 0.002096212, 98, 500, error("Illegal HTTP parameter: _4466{msg:succeed,result:hhhh,status:true}")).
+server(stopped, 1668491466).
+server(started, 1668491566).
+/*Mon Nov 14 23:52:46 2022*/ request(1, 1668491566.434, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(18),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(1, 0.08427217399999999, 99, 500, error("Illegal HTTP parameter: _15606{msg:succeed,result:dddd,status:true}")).
+/*Mon Nov 14 23:53:25 2022*/ request(2, 1668491605.217, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(31),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(2, 0.0018127000000000004, 85, 500, error("Illegal HTTP parameter: _4190{msg:succeed,result:dddd")).
+/*Mon Nov 14 23:53:53 2022*/ request(3, 1668491633.642, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(18),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(3, 0.0023573250000000004, 98, 500, error("Illegal HTTP parameter: _4466{msg:succeed,result:yyyy,status:true}")).
+/*Mon Nov 14 23:54:23 2022*/ request(4, 1668491663.138, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(28),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(4, 0.002068289000000001, 108, 500, error("Illegal HTTP parameter: _4156{msg:succeed,result:yyyy      rrrr,status:true}")).
+/*Mon Nov 14 23:54:36 2022*/ request(5, 1668491676.977, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(37),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(5, 0.0022030869999999994, 95, 500, error("Illegal HTTP parameter: _4624{msg:succeed,result:yyyy      rrrr")).
+/*Mon Nov 14 23:55:44 2022*/ request(6, 1668491744.335, [peer(ip(127,0,0,1)),method(post),request_uri(/),path(/),http_version(1-1),content_type('text/plain'),user_agent('PostmanRuntime/7.29.2'),postman_token('17d6c74f-f449-4d68-8c58-7b714acd4b22'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(6, 0.0037466380000000035, 10, 200, ok).
+completed(0, 0.019904088, 376, 400, error("Illegal HTTP parameter:     \"urQuery\": \"aaaaaaaaaaaaaa\" (in_http_request)")).
+/*Mon Nov 14 23:56:34 2022*/ request(7, 1668491794.546, [peer(ip(127,0,0,1)),method(post),request_uri('/test'),path('/test'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('07da7093-202d-4100-b644-54a3ef638eab'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(7, 0.003494999999999998, 97, 405, error("No permission to http_method post `'/test''")).
+/*Mon Nov 14 23:56:43 2022*/ request(8, 1668491803.795, [peer(ip(127,0,0,1)),method(get),request_uri('/test'),path('/test'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('a60f6e3e-6278-47bb-bf96-71f8efd33d0f'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(8, 0.0013193000000000024, 12, 200, ok).
+completed(0, 0.0012137120000000057, 376, 400, error("Illegal HTTP parameter:     \"urQuery\": \"aaaaaaaaaaaaaa\" (in_http_request)")).
+server(stopped, 1668491839).
+server(started, 1668491850).
+/*Mon Nov 14 23:57:30 2022*/ request(1, 1668491850.357, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('7f4bdba5-d4b1-4a3f-a6f6-9cad1b533472'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(1, 0.079154429, 59, 200, ok).
+/*Mon Nov 14 23:58:04 2022*/ request(2, 1668491884.295, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('9d189685-ebb3-4445-a4c1-1a27e6f59bc2'),host(localhost),port(8082),connection('keep-alive'),content_length(43)]).
+completed(2, 0.0021313879999999997, 67, 200, ok).
+server(stopped, 1668492090).
+server(started, 1668492099).
+/*Tue Nov 15 00:01:39 2022*/ request(1, 1668492099.076, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('fc54ffee-bd9d-42e0-ba4f-7d20a9b2038c'),host(localhost),port(8082),connection('keep-alive'),content_length(43)]).
+completed(1, 0.07720157500000001, 67, 200, ok).
+/*Tue Nov 15 00:01:56 2022*/ request(2, 1668492116.572, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(38),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(2, 0.002211037, 71, 200, ok).
+server(stopped, 1668492773).
+server(started, 1668492785).
+/*Tue Nov 15 00:13:05 2022*/ request(1, 1668492785.319, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('12922178-5894-42e3-9cf0-56c7833866c1'),host(localhost),port(8082),connection('keep-alive'),content_length(43)]).
+completed(1, 0.086937073, 64, 500, error("Illegal HTTP parameter: aaaaaaaaaaaaaa")).
+server(stopped, 1668492829).
+server(started, 1668492837).
+/*Tue Nov 15 00:13:57 2022*/ request(1, 1668492837.103, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('0590a87b-de2f-4d3a-96cd-48c5471b2536'),host(localhost),port(8082),connection('keep-alive'),content_length(43)]).
+completed(1, 0.083090991, 53, 500, error("Illegal HTTP parameter: aaa")).
+/*Tue Nov 15 00:14:11 2022*/ request(2, 1668492851.332, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('48b24910-ffdf-4c12-9873-9c332494bdc0'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(2, 0.002009988000000004, 53, 500, error("Illegal HTTP parameter: aaa")).
+server(stopped, 1668492876).
+server(started, 1668492883).
+/*Tue Nov 15 00:14:43 2022*/ request(1, 1668492883.132, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('a9cb302d-b3b2-4036-be28-13ad78470eff'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(1, 0.078736622, 59, 200, ok).
+server(stopped, 1668493010).
+server(started, 1668493041).
+/*Tue Nov 15 00:17:20 2022*/ request(1, 1668493040.965, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('fb5b7885-cf7c-40c8-bd21-bf4fb2a09462'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(1, 0.077160149, 59, 200, ok).
+server(stopped, 1668493108).
+server(started, 1668493140).
+/*Tue Nov 15 00:18:59 2022*/ request(1, 1668493139.700, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('3ff8647e-ad50-4592-8f8f-12e6890fa84f'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(1, 0.073781277, 4, 200, ok).
+server(stopped, 1668493231).
+server(started, 1668493238).
+/*Tue Nov 15 00:20:38 2022*/ request(1, 1668493238.147, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.29.2'),postman_token('4a93c08d-ec14-4d07-b8c8-19a87232ca38'),host(localhost),port(8082),connection('keep-alive'),content_length(35)]).
+completed(1, 0.076918764, 59, 200, ok).
+/*Tue Nov 15 00:20:54 2022*/ request(2, 1668493254.264, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(68),host(localhost),port(8082),user_agent('Java-http-client/18.0.2.1'),content_type('application/json')]).
+completed(2, 0.002286699, 112, 200, ok).
+server(stopped, 1668493698).
+server(started, 1669825315).
+/*Wed Nov 30 10:21:54 2022*/ request(1, 1669825314.607, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(1, 0.0468003, 169, 200, ok).
+server(stopped, 1669826754).
+server(started, 1669826834).
+/*Wed Nov 30 10:47:13 2022*/ request(1, 1669826833.948, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(1, 0.0468003, 553, 200, ok).
+/*Wed Nov 30 10:47:59 2022*/ request(2, 1669826879.471, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(2, 0.0, 108, 500, error("Stream <stream>(0000000003ebdd30):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:48:23 2022*/ request(3, 1669826903.153, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(3, 0.0, 108, 500, error("Stream <stream>(0000000002999870):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:48:39 2022*/ request(4, 1669826919.874, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(4, 0.0, 553, 200, ok).
+/*Wed Nov 30 10:48:44 2022*/ request(5, 1669826924.153, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(5, 0.0, 108, 500, error("Stream <stream>(0000000002a96730):1:25 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:48:47 2022*/ request(6, 1669826927.226, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(6, 0.0, 108, 500, error("Stream <stream>(0000000002af3180):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:51:04 2022*/ request(7, 1669827064.292, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(7, 0.0, 108, 500, error("Stream <stream>(000000000273b870):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:51:06 2022*/ request(8, 1669827066.899, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(8, 0.0, 108, 500, error("Stream <stream>(00000000029dcf70):1:25 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:51:09 2022*/ request(9, 1669827069.145, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(9, 0.0, 553, 200, ok).
+/*Wed Nov 30 10:51:29 2022*/ request(10, 1669827089.746, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(10, 0.0, 553, 200, ok).
+/*Wed Nov 30 10:51:32 2022*/ request(11, 1669827092.784, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(11, 0.015600100000000002, 108, 500, error("Stream <stream>(0000000002c8ee30):1:25 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:51:35 2022*/ request(12, 1669827095.656, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(12, 0.0, 108, 500, error("Stream <stream>(0000000002c8f490):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:52:16 2022*/ request(13, 1669827136.872, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(13, 0.0, 108, 500, error("Stream <stream>(0000000002c8faf0):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:57:40 2022*/ request(14, 1669827460.624, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(14, 0.0, 553, 200, ok).
+/*Wed Nov 30 10:57:54 2022*/ request(15, 1669827474.051, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(15, 0.015600100000000002, 553, 200, ok).
+/*Wed Nov 30 10:58:14 2022*/ request(16, 1669827494.786, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(16, 0.0, 552, 200, ok).
+/*Wed Nov 30 10:58:24 2022*/ request(17, 1669827504.254, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(128),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(17, 0.0, 51, 200, ok).
+/*Wed Nov 30 10:58:33 2022*/ request(18, 1669827513.062, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(18, 0.0, 552, 200, ok).
+/*Wed Nov 30 10:59:09 2022*/ request(19, 1669827549.162, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(19, 0.0, 108, 500, error("Stream <stream>(0000000003eadb10):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:59:12 2022*/ request(20, 1669827552.973, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(20, 0.0, 553, 200, ok).
+/*Wed Nov 30 10:59:15 2022*/ request(21, 1669827555.396, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(21, 0.0, 108, 500, error("Stream <stream>(0000000003eae7f0):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 10:59:17 2022*/ request(22, 1669827557.797, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(22, 0.0, 108, 500, error("Stream <stream>(0000000003eaee50):1:25 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 11:34:49 2022*/ request(23, 1669829689.376, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(23, 0.0, 108, 500, error("Stream <stream>(0000000003eaf4b0):1:24 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 11:34:55 2022*/ request(24, 1669829695.995, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(24, 0.0, 108, 500, error("Stream <stream>(0000000003eafb10):1:25 Syntax error: json(illegal_object)")).
+/*Wed Nov 30 11:34:58 2022*/ request(25, 1669829698.766, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(25, 0.0, 553, 200, ok).
+/*Wed Nov 30 11:37:15 2022*/ request(26, 1669829835.134, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(26, 0.0, 552, 200, ok).
+/*Wed Nov 30 11:37:20 2022*/ request(27, 1669829840.696, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(27, 0.0, 557, 200, ok).
+/*Wed Nov 30 11:37:31 2022*/ request(28, 1669829851.368, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(28, 0.0, 553, 200, ok).
+/*Wed Nov 30 11:44:49 2022*/ request(29, 1669830289.790, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(18),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(29, 0.015600100000000006, 51, 200, ok).
+/*Wed Nov 30 11:45:18 2022*/ request(30, 1669830318.044, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(30, 0.0, 553, 200, ok).
+/*Wed Nov 30 11:49:54 2022*/ request(31, 1669830594.343, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(21),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(31, 0.0, 51, 200, ok).
+/*Wed Nov 30 11:50:22 2022*/ request(32, 1669830622.014, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(32, 0.0, 552, 200, ok).
+/*Wed Nov 30 11:50:40 2022*/ request(33, 1669830640.866, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(134),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(33, 0.0, 51, 200, ok).
+/*Wed Nov 30 11:53:40 2022*/ request(34, 1669830820.483, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(28),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(34, 0.0, 51, 200, ok).
+/*Wed Nov 30 11:53:48 2022*/ request(35, 1669830828.025, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(35, 0.015600100000000002, 553, 200, ok).
+/*Wed Nov 30 11:54:01 2022*/ request(36, 1669830841.510, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(121),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(36, 0.0, 552, 200, ok).
+server(started, 1669831796).
+/*Wed Nov 30 12:09:55 2022*/ request(1, 1669831795.927, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_length(122),host(localhost),port(8082),user_agent('Java-http-client/17.0.4.1'),content_type('application/json')]).
+completed(1, 0.015600100000000002, 553, 200, ok).

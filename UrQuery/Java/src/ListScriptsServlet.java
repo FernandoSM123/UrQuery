@@ -17,6 +17,8 @@ import java.util.*;
 
 import com.google.gson.Gson;
 
+//Listar todos los archivos de urquery
+
 @WebServlet(name = "ListScriptsServlet", urlPatterns = { "/listScripts" })
 
 public class ListScriptsServlet extends HttpServlet {

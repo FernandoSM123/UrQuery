@@ -1,0 +1,17 @@
+import {ur_doc, ur_evaluate, ur_tag, ur_active_doc} from './urquery.mjs'
+function urQuery_01(uri){
+	const ul_tag = children => ur_tag('ul', children)
+		function* for_01(uri){
+		const xpathResultIter = ur_evaluate(ur_doc(uri),'/bookstore/book/title')
+		const li_tag = children => ur_tag('li', children)
+		for (li of xpathResultIter){
+			yield li_ag(li)
+		}
+	}
+	return ul_tag([...for_01(uri)])
+}
+
+function main(){
+	let uri = ur_active_doc()
+	return urQuery_01(uri)
+}

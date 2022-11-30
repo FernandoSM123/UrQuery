@@ -17,6 +17,8 @@ import java.util.*;
 
 import com.google.gson.Gson;
 
+//Listar todos los archivos xml de prueba
+
 @WebServlet(name = "ListFilesServlet", urlPatterns = { "/listFiles" })
 
 public class ListFilesServlet extends HttpServlet {
@@ -44,6 +46,3 @@ public class ListFilesServlet extends HttpServlet {
         writer.flush();
     }
 }
-
-// https://docs.oracle.com/javaee/1.3/api/javax/servlet/ServletContext.html#getResourcePaths%28java.lang.String%29
-// https://stackoverflow.com/questions/14526260/how-do-i-get-the-file-name-from-a-string-containing-the-absolute-file-path
