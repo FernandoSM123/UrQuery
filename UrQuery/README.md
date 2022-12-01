@@ -2,7 +2,7 @@
 
 ## EIF-400 - Paradigmas de Programación - II Ciclo 2022
 
-### Profesor: Carlos Loría Sáenz
+### Profesor: Carlos Loría-Sáenz
 
 ### Grupo: 02-3pm
 
